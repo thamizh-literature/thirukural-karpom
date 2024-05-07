@@ -31,6 +31,11 @@ const Header = () => {
       <Navbar bg="dark" variant="dark" expand="lg" fixed="top">
         <Container>
           <Navbar.Brand href="/">{APP_NAME}</Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Link href="/samacheer-kalvi">
+               {SAMACHEER_EDUCATION}
+            </Nav.Link>
+          </Nav>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav>
@@ -55,7 +60,7 @@ const Header = () => {
             <Nav>
               <Nav.Link
                 target="_blank"
-                href="https://github.com/thirukural-karpom/thirukural-karpom"
+                href="https://github.com/canabadyweb/thirukural-karpom"
                 className="py-0">
                 <i className="bi bi-github fs-4"></i>
               </Nav.Link>

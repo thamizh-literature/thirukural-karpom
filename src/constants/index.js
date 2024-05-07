@@ -20,6 +20,7 @@ export const APP_NAME = "திருக்குறள் கற்போம்
   SUBMIT = "சமர்ப்பி",
   GENERAL = "பொது",
   CLASS_SUFFIX = "ம் வகுப்பு",
+  SAMACHEER_CLASS = "வகுப்பு",
   FROM_SAMACHEER_CLASS = 10,
   TO_SAMACHEER_CLASS = 10,
   SAMACHEER_EDUCATION = "சமச்சீர் கல்வி",

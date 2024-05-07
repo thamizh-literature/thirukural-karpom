@@ -3,12 +3,14 @@ import { Route, Switch } from "react-router-dom"
 import About from "./About"
 import CommonQuiz from "./CommonQuiz"
 import Kurals from "./Kurals"
+import SamacheerKurals from "./SamacheerKurals"
 import SamacheerQuiz from "./SamacheerQuiz"
 
 const Main = () => (
   <main>
     <Switch>
-      <Route exact path="/" component={Kurals} />
+      <Route exact path="/" component={Kurals} /> 
+      <Route exact path="/samacheer-kalvi" component={SamacheerKurals} />
       <Route exact path="/quiz/:quizType" component={CommonQuiz} />
       <Route exact path="/quiz/:quizType" component={CommonQuiz} />
       <Route exact path="/quiz/samacheer/:quizType/:classNo" component={SamacheerQuiz} />
