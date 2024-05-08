@@ -113,7 +113,7 @@ const SamacheerKurals = () => {
             <Row>
               <Col md={{ span: 4, offset: 1 }}>
                 <Form.Group>
-                  <Form.Label>{SAMACHEER_EDUCATION}</Form.Label>
+                  <Form.Label>{SAMACHEER_EDUCATION} {SAMACHEER_CLASS}</Form.Label>
                   <Typeahead
                     id="samacheer-education-selector"
                     onChange={handleClassChange}
