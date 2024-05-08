@@ -119,6 +119,7 @@ const SamacheerKurals = () => {
                     onChange={handleClassChange}
                     options={vaguppukkal}
                     placeholder={SAMACHEER_CLASS}
+                    disabled={disabled}
                     selected={selectedClass !== null ? selectedClass : []}
                   />
                 </Form.Group>
