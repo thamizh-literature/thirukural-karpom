@@ -17,6 +17,7 @@ const SamacheerKurals = () => {
   const [selectedAdhikaram, setSelectedAdhikaram] = useState(null)
   const [kurals, setKurals] = useState([])
   const [termKurals, setTermKurals] = useState([])
+  const [disabled, setDisabled] = useState(true);
 
   useTitle(`${KURALS} | ${APP_NAME}`)
 
@@ -74,6 +75,10 @@ const SamacheerKurals = () => {
       setAdhikarams(adhikarams)
       setSelectedAdhikaram([adhikarams[0]])
     }
+  }
+
+  const clearAdhikaram = () => {
+    setSelectedAdhikaram([])
   }
 
   const renderKurals = () => (
@@ -135,6 +140,7 @@ const SamacheerKurals = () => {
                     placeholder={ADHIKARAM}
                     selected={selectedAdhikaram !== null ? selectedAdhikaram : []}
                   />
+                <input className="close-button" type="reset" value="x"  onClick={() => clearAdhikaram()}/>
                 </Form.Group>
               </Col>
               <Col md={2}>

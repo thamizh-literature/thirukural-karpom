@@ -18,9 +18,16 @@ button.rbt-close {
 }
 
 .kural-text-bold {
-  white-space: pre-line;
-  font-size: 0.85rem;
   font-weight: bold;
+}
+
+.close-button {
+  float: right;
+  position: relative;
+  margin-top: -30px;
+  margin-right: 10px;
+  background-color: #ffffff;
+  border: none;
 }
 
 @include media-breakpoint-up(sm) {
