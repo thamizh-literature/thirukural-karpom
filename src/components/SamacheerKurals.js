@@ -2,16 +2,16 @@ import React, { useEffect, useState } from "react"
 import { Badge, Button, Card, Col, Container, Form, Row, Tab, Tabs } from "react-bootstrap"
 import { Typeahead } from "react-bootstrap-typeahead"
 import { useTitle } from "react-use"
-import { ADHIKARAM, APP_NAME, KURAL, KURALS, PAAL, SUBMIT, SAMACHEER_EDUCATION, SAMACHEER_CLASS } from "../constants"
+import { ADHIKARAM, APP_NAME, KURAL, KURALS, SUBMIT, SAMACHEER_EDUCATION, SAMACHEER_CLASS } from "../constants"
 import paals from "../data/paals.json"
 import vaguppukkal from "../data/samacheer-classes.json"
 import samacheerKurals from "../data/samacheer-kurals.json"
 import { log } from "../helpers"
 import { getAdhikarams, getKurals } from "../service/Thirukural"
-import {getClassNumbers, getAdhikaramNumbers } from "../service/Samacheer"
+import {getAdhikaramNumbers } from "../service/Samacheer"
 
 const SamacheerKurals = () => {
-  const [selectedPaal, setSelectedPaal] = useState(null);
+  // const [selectedPaal, setSelectedPaal] = useState(null);
   const [selectedClass, setSelectedClass] = useState(null);
   const [adhikarams, setAdhikarams] = useState([]);
   const [selectedAdhikaram, setSelectedAdhikaram] = useState(null)
@@ -23,7 +23,7 @@ const SamacheerKurals = () => {
   useEffect(() => {
     log(">>>>> side-effect")
     if (!selectedClass) {
-      const classes = getClassNumbers()
+      // const classes = getClassNumbers()
       const vaguppu = vaguppukkal[0]
       const termKurals = samacheerKurals[vaguppu]
       const paal = paals[0]
@@ -52,17 +52,17 @@ const SamacheerKurals = () => {
     event.preventDefault()
   }
 
-  const handlePaalChange = (values) => {
-    log(`handle paal change, values: ${values}`)
-    setSelectedPaal(values)
-    if (values.length) {
-      const [paal] = values
-      const adhikarams = getAdhikarams(paal)
-      log(`adhikarams for ${paal}: ${adhikarams}`)
-      setAdhikarams(adhikarams)
-      setSelectedAdhikaram([adhikarams[0]])
-    }
-  }
+  // const handlePaalChange = (values) => {
+  //   log(`handle paal change, values: ${values}`)
+  //   setSelectedPaal(values)
+  //   if (values.length) {
+  //     const [paal] = values
+  //     const adhikarams = getAdhikarams(paal)
+  //     log(`adhikarams for ${paal}: ${adhikarams}`)
+  //     setAdhikarams(adhikarams)
+  //     setSelectedAdhikaram([adhikarams[0]])
+  //   }
+  // }
 
   const handleClassChange = (values) => {
     log(`handle class change, values: ${values}`)
