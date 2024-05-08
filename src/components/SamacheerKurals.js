@@ -5,6 +5,7 @@ import { useTitle } from "react-use"
 import { ADHIKARAM, APP_NAME, KURAL, KURALS, PAAL, SUBMIT, SAMACHEER_EDUCATION, SAMACHEER_CLASS } from "../constants"
 import paals from "../data/paals.json"
 import vaguppukkal from "../data/samacheer-classes.json"
+import samacheerKurals from "../data/samacheer-kurals.json"
 import { log } from "../helpers"
 import { getAdhikarams, getKurals } from "../service/Thirukural"
 import {getClassNumbers, getAdhikaramNumbers } from "../service/Samacheer"
@@ -15,6 +16,7 @@ const SamacheerKurals = () => {
   const [adhikarams, setAdhikarams] = useState([]);
   const [selectedAdhikaram, setSelectedAdhikaram] = useState(null)
   const [kurals, setKurals] = useState([])
+  const [termKurals, setTermKurals] = useState([])
 
   useTitle(`${KURALS} | ${APP_NAME}`)
 
@@ -23,16 +25,18 @@ const SamacheerKurals = () => {
     if (!selectedClass) {
       const classes = getClassNumbers()
       const vaguppu = vaguppukkal[0]
+      const termKurals = samacheerKurals[vaguppu]
       const paal = paals[0]
       const adhikarams = getAdhikarams(paal)
       log(`adhikarams for ${paal}: ${adhikarams}`)
-      const adhikaram = adhikarams[0]
+      const adhikaram = adhikarams[13]
       const kurals = getKurals(adhikaram.no)
       log(`kurals for ${adhikaram.no}-${adhikaram.name}: ${JSON.stringify(kurals)}`)
 
       setSelectedClass([vaguppu])
       setAdhikarams(adhikarams)
       setSelectedAdhikaram([adhikaram])
+      setTermKurals(termKurals)
       setKurals(kurals)
     }
     log("<<<<< side-effect")
@@ -84,8 +88,8 @@ const SamacheerKurals = () => {
                 </Col>
               </Row>
               <Row className="my-3">
-                <Col className="kural-text">
-                  {k.kural}
+                <Col className={(termKurals[0].includes(k.kuralNo) || termKurals[1].includes(k.kuralNo)) ? "kural-text kural-text-bold" : "kural-text"}>
+                { k.kural }
                 </Col>
               </Row>
               <Row className="my-3">

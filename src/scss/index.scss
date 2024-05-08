@@ -17,6 +17,12 @@ button.rbt-close {
   font-size: 0.85rem;
 }
 
+.kural-text-bold {
+  white-space: pre-line;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
 @include media-breakpoint-up(sm) {
   .kural-text {
     font-size: 0.85rem;
