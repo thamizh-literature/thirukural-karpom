@@ -57,14 +57,14 @@ const Header = () => {
                 {ABOUT_WEBSITE}
               </Nav.Link>
             </Nav>
-            <Nav>
-              <Nav.Link
-                target="_blank"
-                href="https://github.com/canabadyweb/thirukural-karpom"
-                className="py-0">
-                <i className="bi bi-github fs-4"></i>
-              </Nav.Link>
-            </Nav>
+            {/* <Nav> */}
+            {/*   <Nav.Link */}
+            {/*     target="_blank" */}
+            {/*     href="https://github.com/canabadyweb/thirukural-karpom" */}
+            {/*     className="py-0"> */}
+            {/*     <i className="bi bi-github fs-4"></i> */}
+            {/*   </Nav.Link> */}
+            {/* </Nav> */}
           </Navbar.Collapse>
         </Container>
       </Navbar>
