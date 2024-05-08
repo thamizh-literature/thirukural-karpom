@@ -27,9 +27,9 @@ const SamacheerKurals = () => {
       const vaguppu = vaguppukkal[0]
       const termKurals = samacheerKurals[vaguppu]
       const paal = paals[0]
-      const adhikarams = getAdhikarams(paal)
+      const adhikarams = getAdhikaramNumbers(vaguppu)
       log(`adhikarams for ${paal}: ${adhikarams}`)
-      const adhikaram = adhikarams[13]
+      const adhikaram = adhikarams[0]
       const kurals = getKurals(adhikaram.no)
       log(`kurals for ${adhikaram.no}-${adhikaram.name}: ${JSON.stringify(kurals)}`)
 
