@@ -9,7 +9,8 @@ const shuffleItems = (array) => {
 }
 
 const log = (...args) => {
-  if (process.env.NODE_ENV !== "production") {
+  // if (process.env.NODE_ENV !== "production") {
+  if (1) {
     console.log(...args)
   }
 }

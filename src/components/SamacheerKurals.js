@@ -7,7 +7,7 @@ import paals from "../data/paals.json"
 import vaguppukkal from "../data/samacheer-classes.json"
 import { log } from "../helpers"
 import { getAdhikarams, getKurals } from "../service/Thirukural"
-import {getClassNumbers } from "../service/Samacheer"
+import {getClassNumbers, getAdhikaramNumbers } from "../service/Samacheer"
 
 const SamacheerKurals = () => {
   const [selectedPaal, setSelectedPaal] = useState(null);
@@ -65,7 +65,7 @@ const SamacheerKurals = () => {
     setSelectedClass(values)
     if (values.length) {
       const [vaguppu] = values
-      const adhikarams = getAdhikarams(paals[0])
+      const adhikarams = getAdhikaramNumbers(vaguppu)
       log(`adhikarams for ${vaguppu}: ${adhikarams}`)
       setAdhikarams(adhikarams)
       setSelectedAdhikaram([adhikarams[0]])
