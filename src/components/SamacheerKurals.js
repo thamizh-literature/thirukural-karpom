@@ -88,6 +88,9 @@ const SamacheerKurals = () => {
                   {k.kural}
                 </Col>
               </Row>
+              <Row className="my-3">
+                  <audio src={"https://www.tamilvu.org/library/l2100/audio/" + k.kuralNo + ".mp3"} controls />
+              </Row>
               <Tabs defaultActiveKey="0" className="my-3">
                 {k.explanations.map((e, idx) => (<Tab key={idx} eventKey={idx} title={e.author}>{e.explanation}</Tab>))}
               </Tabs>
